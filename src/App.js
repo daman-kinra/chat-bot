@@ -134,6 +134,11 @@ function App() {
   }, [allQuestions]);
   return (
     <MainDiv>
+      <NavBar>
+        <a href="https://chat-bot-db.web.app" target="_blank">
+          admin login
+        </a>
+      </NavBar>
       {openModal ? (
         <ChatBox className={closing ? "closing" : ""}>
           <Header>
@@ -396,7 +401,14 @@ const SubmitButton = styled.button`
     color: pink;
   }
 `;
-
+const NavBar = styled.div`
+  width: 100%;
+  height: 10vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+`;
 const Error = styled.span`
   color: red;
   margin-bottom: 0.5rem;

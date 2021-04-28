@@ -130,6 +130,7 @@ function App() {
     };
     const fuse = new Fuse(allQuestions, options);
     const pattern = input.trim().toLowerCase();
+    console.log(fuse.search(pattern));
     setSearchedQna(fuse.search(pattern));
   }, [allQuestions]);
   return (
@@ -234,9 +235,9 @@ function App() {
                         }}
                         className={` ${position === pos ? "showans" : ""}`}
                       >
-                        <p className="singleQNA">{`Q: ${item.Q}`}</p>
+                        <p className="singleQNA">{`Q: ${item.item.Q}`}</p>
                         {checkAns && position === pos ? (
-                          <p>{`A: ${item.A}`}</p>
+                          <p>{`A: ${item.item.A}`}</p>
                         ) : (
                           ""
                         )}
